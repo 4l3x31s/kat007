@@ -1,0 +1,22 @@
+{
+  "name": "kat007",
+  "version": "1.0.0",
+  "description": "Servicios REST",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4l3x31s/kat007.git"
+  },
+  "keywords": [
+    "REST"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/4l3x31s/kat007/issues"
+  },
+  "homepage": "https://github.com/4l3x31s/kat007#readme"
+}
