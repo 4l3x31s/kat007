@@ -1,6 +1,18 @@
 const Info = require('../models/info').Info;
 const service = require('../services/index');
-
+const auth = require('../middleware/auth');
+const services = require('../services/index');
+function generaToken(req,res) {
+    if(req.body.user == 'guanyu'){
+        res.status(200).send({
+            mensaje: 'Token generado',
+            continuarFlujo: true,
+            token: services.createToken(req.body.user)
+        })
+    }else {
+        return res.status(500).send({mensaje: 'Error al generar los datos.', continuarFlujo: false})
+    }
+}
 function insertarInfo(req,res) {
     var info = new Info({
         bienvenida: req.body.bienvenida,
@@ -58,5 +70,6 @@ module.exports = {
     insertarInfo,
     buscarInfo,
     listarInfo,
-    actualizarInfo
+    actualizarInfo,
+    generaToken
 }
