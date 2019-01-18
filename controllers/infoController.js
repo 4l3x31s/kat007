@@ -1,6 +1,7 @@
 const Info = require('../models/info').Info;
 const service = require('../services/index');
 const auth = require('../middleware/auth');
+
 const services = require('../services/index');
 function generaToken(req,res) {
     if(req.body.user == 'guanyu'){
