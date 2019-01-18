@@ -1,8 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var config = require('./config');
-var infoRoute = require('./routes/info-route.js');
-var modelRoute = require('./routes/model-route.js');
+var infoRoute = require('./ruteo/info-route');
+var modelRoute = require('./ruteo/model-route');
 var app = express();
 
 var port = process.env.PORT || 3001;
