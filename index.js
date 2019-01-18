@@ -16,6 +16,6 @@ app.get("/",(req,res)=>{
 app.use("/info",infoRoute);
 app.use("/model",modelRoute);
 app.listen(port,()=>{
-    console.log("Servidor inicializado en puerto" + PORT)
+    console.log("Servidor inicializado en puerto" + port)
 })
 
