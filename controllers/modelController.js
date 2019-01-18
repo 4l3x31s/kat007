@@ -6,9 +6,11 @@ function insertarUsuarios(req,res) {
         nombre: req.body.nombre,
         edad: req.body.edad,
         ci: req.body.ci,
-        caracteristicas: req.body.caracteristicas,
+        estatura: req.body.estatura,
+        cuerpo: req.body.cuerpo,
         piel: req.body.piel,
         descripcion: req.body.descripcion,
+        servicio:req.body.servicio,
         serv_hora: req.body.serv_hora,
         serv_media_hora: req.body.serv_media_hora,
         serv_2_horas: req.body.serv_2_horas,
@@ -46,8 +48,19 @@ function listarModelos(req, res){
         }
     });
 }
+function listarPorCiudad(req, res){
+    Modelos.find({ciudad: {$regex: req.params.ciudad}},(err,cruds)=>{
+        console.log(JSON.stringify(cruds));
+        if(!err){
+            res.send(cruds);
+        }else {
+            res.send(err);
+        }
+    });
+}
 module.exports = {
     insertarUsuarios,
     buscar,
-    listarModelos
+    listarModelos,
+    listarPorCiudad
 };
