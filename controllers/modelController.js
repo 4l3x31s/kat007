@@ -49,7 +49,7 @@ function listarModelos(req, res){
     });
 }
 function listarPorCiudad(req, res){
-    Modelos.find({ciudad: {$regex: req.params.ciudad}},(err,cruds)=>{
+    Modelos.find({ciudad: {$regex: req.params.ciudad}, estado: true},(err,cruds)=>{
         console.log(JSON.stringify(cruds));
         if(!err){
             res.send(cruds);
